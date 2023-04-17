@@ -4,6 +4,7 @@ import './App.css';
 type Cell = {
   id: number;
   amount: number;
+  color: string
 }
 
 type MatrixProps = {
@@ -25,6 +26,7 @@ const Matrix: React.FC<MatrixProps> = ({ m, n, x }) => {
           row.push({
             id: i * n + j,
             amount: Math.floor(Math.random() * 100) + 10,
+            color: ''
           });
         }
         newMatrix.push(row);
@@ -64,6 +66,7 @@ const Matrix: React.FC<MatrixProps> = ({ m, n, x }) => {
           newRow.push({
             id: matrix.length * n + i,
             amount: Math.floor(Math.random() * 100) + 10,
+            color: ''
           });
         }
         setMatrix(matrix.concat([newRow]));
